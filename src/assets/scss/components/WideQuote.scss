@@ -1,0 +1,97 @@
+.WideQuote {
+
+  .content-item {
+
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  &__column {
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    color: $grey-dark;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 125%;
+    /* identical to box height, or 25px */
+    text-align: center;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    white-space: pre-wrap;
+  }
+
+  &__body {
+    color: $grey-dark;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    /* or 24px */
+    text-align: center;
+    letter-spacing: 0.002em;
+    white-space: pre-wrap;
+  }
+
+  &__quote-wrapper {
+    margin-top: 24px;
+    background-image: url("/png/wide-quote-bg.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 160px auto;
+  }
+
+  &__quote-inner {
+    padding: 44px 64px 0 64px;
+
+    @include media('<=desktop-sm'){
+      padding: 44px 30px 0 30px;
+    }
+
+    @include media('<tablet'){
+      padding: 44px 15px 0 15px;
+    }
+  }
+
+  &__quote-content {
+    padding-left: 30px;
+    border-left: solid 2px $black;
+
+    @include media('<=desktop-sm'){
+      border-left: 0;
+      padding-left: 0;
+      border-top: solid 2px $black;
+    }
+  }
+
+  &__quote {
+    margin-bottom: 24px;
+    color: $grey-dark;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 42px;
+    white-space: pre-wrap;
+
+    @include media('<=desktop-sm'){
+      font-size: 20px;
+      line-height: 25px;
+      padding-top: 30px;
+    }
+  }
+
+  &__quoter {
+    color: $blue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 125%;
+    /* or 20px */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+}

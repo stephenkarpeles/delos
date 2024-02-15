@@ -1,0 +1,123 @@
+.RichTextImageShadow {
+
+  &--content-left {
+    .column-image {
+      order: 2;
+      @include make-col(7);
+      @include make-col-offset(1)
+    }
+
+    .column-content {
+      order: 1;
+      @include make-col(4);
+    }
+  }
+
+  &--content-right {
+    .column-image {
+      order: 1;
+      @include make-col(7);
+    }
+
+    .column-content {
+      order: 2;
+      @include make-col(4);
+      @include make-col-offset(1);
+    }
+  }
+
+  &__image-wrapper {
+    //width: calc(100% - 80px);
+    width: 100%;
+    min-height: 620px;
+    position: relative;
+
+    .image {
+      width: 100%;
+      height: calc(100% - 80px);
+      //margin-left: 80px;
+      position: absolute;
+      top: 0;
+      z-index: 12;
+      background-size: cover;
+
+      .RichTextImageShadow--content-left & {
+        width: calc(100% - 80px);
+        left: 0;
+      }
+      .RichTextImageShadow--content-right & {
+        width: calc(100% - 80px);
+        right: 0;
+      }
+    }
+
+    .shadow {
+      width: calc(100% - 80px);
+      height: 540px;
+      position: absolute;
+      bottom: 0;
+      z-index: 10;
+      background-color: $blue;
+
+      .RichTextImageShadow--content-left & {
+        right: 0;
+      }
+      .RichTextImageShadow--content-right & {
+        left: 0;
+      }
+    }
+  }
+
+  &__content-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+    color: $black;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 125%;
+    /* identical to box height, or 25px */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    color: $black;
+  }
+
+  &__body {
+    margin-bottom: 30px;
+    color: $black;
+    font-size: 16px;
+    line-height: 150%;
+    /* or 24px */
+    letter-spacing: 0.002em;
+    white-space: pre-wrap;
+  }
+
+  &__links {
+
+    a.Btn {
+      margin-right: 20px;
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include media('<tablet') {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 12px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

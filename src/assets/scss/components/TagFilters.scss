@@ -1,0 +1,117 @@
+.TagFilters {
+
+  padding: 0 15px;
+
+  ul, li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  #search-title {
+    margin-bottom: 36px;
+
+    input#search-title-input {
+      padding-left: 0;
+      padding-right: 45px;
+      border: none;
+      border-bottom: solid 1px #747474;
+      border-radius: unset;
+      background-color: $white;
+      background-image: url("/svg/icon/hub-search.svg");
+      background-repeat: no-repeat;
+      background-position: 95% 50%;
+      color: #747474;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 21px;
+      line-height: 25px;
+
+      &:focus {
+        border-bottom: solid 1px $black;
+      }
+    }
+  }
+
+  .tag-filters-switch-type {
+    margin-bottom: 36px;
+    display: none;
+
+    select {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      border: solid 1px #747474;
+      border-radius: 6px;
+      color: $blue;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 25px;
+      line-height: 35px;
+      text-align: center;
+      //appearance: none;
+      //background-image: url("/svg/icon/caret-down.svg");
+      //background-repeat: no-repeat;
+      //background-position: 95% 55%;
+
+      option {
+        color: $black;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 35px;
+      }
+    }
+  }
+
+  ul.tag-filters-parent-list {
+
+    & > li {
+      margin-bottom: 30px;
+
+      h5 {
+        margin-bottom: 5px;
+        color: #747474;
+        font-size: 13px;
+        line-height: 15px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  ul.tag-filters-child-list {
+
+    li {
+      margin-bottom: 3px;
+
+      div.form-check {
+        margin-left: 0;
+        padding-left: 0;
+        position: relative;
+
+        label {
+          padding-left: 25px;
+          color: #747474;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 18px;
+        }
+
+        input[type="checkbox"] {
+          display: inline-block;
+          position: absolute;
+          bottom: 3px;
+          left: 0;
+          width: 16px;
+          height: 16px;
+          border: 1px solid #767676;
+          box-sizing: border-box;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+
+
+}

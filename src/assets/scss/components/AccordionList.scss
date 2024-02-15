@@ -1,0 +1,236 @@
+.AccordionList {
+
+  &--row-1 {
+
+    .accordion-content-grid {
+      display: block;
+
+      .accordion-content-item {
+        margin-bottom: 20px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .card {
+          background-color: transparent !important;
+        }
+      }
+    }
+  }
+
+  &--row-2 {
+    .accordion-content-grid {
+      display: flex;
+      flex-wrap: wrap;
+
+      @include media('<tablet') {
+        display: block;
+
+      }
+
+      .accordion-content-item {
+        flex: 1 0 50%;
+        margin-bottom: 20px;
+
+        &:nth-last-child(-n+2) {
+          margin-bottom: 0;
+        }
+
+        &:nth-child(odd) {
+          .accordion-inner {
+            margin-right: 15px;
+            @include media('<tablet') {
+              margin-right: 0px;
+
+            }
+          }
+        }
+        &:nth-child(even) {
+          .accordion-inner {
+            margin-left: 15px;
+
+            @include media('<tablet') {
+              margin-left: 0px;
+
+            }
+          }
+
+        }
+
+        .card {
+          background-color: transparent !important;
+        }
+      }
+    }
+  }
+
+  &--row-3 {
+    .accordion-content-grid {
+      display: flex;
+      flex-wrap: wrap;
+
+      .accordion-content-item {
+        flex: 1 0 33%;
+        margin-bottom: 20px;
+
+        &:nth-last-child(-n+3) {
+          margin-bottom: 0;
+        }
+
+        &:nth-child(3n+1) {
+          .accordion-inner {
+            margin-right: 15px;
+          }
+        }
+        &:nth-child(3n+2) {
+          .accordion-inner {
+            margin: 0 15px;
+          }
+        }
+        &:nth-child(3n+3) {
+          .accordion-inner {
+            margin-left: 15px;
+          }
+        }
+
+        .card {
+          background-color: transparent !important;
+        }
+      }
+    }
+  }
+
+
+  // reset bootstrap card styles.
+  .card {
+    border: none;
+
+    .card-header {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item {
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__header {
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+
+  &__title-wrapper {
+    &:focus{
+      outline: none;
+    }
+    position: relative;
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+    border-bottom: solid 2px $grey-dark;
+    cursor: pointer;
+    padding-right: 10px;
+
+    .collapse-sign {
+      position: absolute;
+      top: 3px;
+      right: 0;
+      color: $grey-dark;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 150%;
+    }
+
+    &.collapsed {
+      .collapse-plus {
+        display: block;
+      }
+      .collapse-minus {
+        display: none;
+      }
+    }
+
+    &.not-collapsed {
+      .collapse-plus {
+        display: none;
+      }
+      .collapse-minus {
+        display: block;
+      }
+    }
+  }
+
+  &__title {
+    color: $black;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    /* identical to box height, or 24px */
+    letter-spacing: 0.002em;
+  }
+
+  &__caption {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  &__body {
+    color: $grey-dark;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    /* or 24px */
+    letter-spacing: 0.002em;
+    white-space: pre-wrap;
+
+    p {
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      color: $blue;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__links {
+    margin-bottom: 24px;
+
+    a.Btn {
+      margin-right: 20px;
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include media('<tablet') {
+        &:not(.Btn--right-arrow-white):not(.Btn--right-arrow) {
+          display: block;
+          margin-right: 0;
+          margin-bottom: 12px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  @include blue-button-hover();
+}

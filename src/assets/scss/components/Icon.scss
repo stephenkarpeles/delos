@@ -1,0 +1,66 @@
+.Icon {
+
+  margin-bottom: 45px;
+
+  &--text-center {
+    text-align: center;
+  }
+
+  &--text-side {
+    .inner {
+      display: flex;
+      align-items: center;
+
+      .icon-wrapper {
+        margin-right: 25px;
+        align-self: flex-start;
+      }
+    }
+  }
+
+  &--text-side {
+
+  }
+
+
+  &__image {
+    margin-bottom: 16px;
+
+    img {
+      display: inline-block;
+    }
+
+    .icon-list-alt-spacing-mobile & {
+      @include media("<tablet") {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    color: $black;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    width:200px;
+    letter-spacing: 0.002em;
+
+    @include media('<tablet') {
+      white-space: nowrap;
+    }
+  }
+
+  &__body {
+    color: $black;
+    font-size: 16px;
+    line-height: 150%;
+    /* or 24px */
+    letter-spacing: 0.002em;
+  }
+
+  &__link {
+    margin-top: 16px;
+  }
+}

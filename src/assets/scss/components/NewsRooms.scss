@@ -1,0 +1,187 @@
+.NewsRooms {
+
+  .CardList__list {
+
+    @include media('<desktop-sm') {
+      padding: 0 !important;
+    }
+  }
+
+  &__row-mobile {
+    margin-bottom: 48px;
+  }
+
+  &__title-mobile {
+    //color: #091F40;
+  }
+
+  &--homenewroom {
+    background-color: #D7D1CA;
+    padding: 119px 0 126px;
+    @include media('<tablet') {
+      padding: 72px 0 72px;
+    }
+    .sigle-card {
+      padding-left: 0;
+
+      .CardList--carditem-with-bag {
+        padding: 0;
+
+        .CardList__item {
+          width: 100%;
+          padding: 0;
+
+          @include media('<desktop-sm') {
+
+            .Card__content {
+              min-height: unset;
+              padding: 24px 24px 30px 24px;
+
+              &.card-text-content {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .sigle-card,
+    .NewsRooms__row-mobile {
+      .Btn--right-arrow {
+        padding-left: 0;
+
+        //&:hover{
+        //  color: $blue80 !important;
+        //}
+      }
+    }
+
+    .multicard-news {
+      .NewsRooms__title {
+        //color: rgba(0, 0, 0, 0.8);
+      }
+
+      .Btn--right-arrow {
+        padding-left: 0;
+
+        //&:hover{
+        //  color: $blue80 !important;
+        //}
+      }
+
+      .CardList--left-im-list {
+        padding: 0;
+
+        @include media('<tablet') {
+          margin-top: 48px;
+        }
+
+        .CardList__item {
+          margin-top: 0;
+          margin-bottom: 24px;
+
+          @include media('<tablet') {
+            margin-bottom: 32px;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .Card--left-im-card {
+            background: transparent;
+          }
+
+          .Card__image {
+            text-align: left;
+            width: 33%;
+            height: auto;
+
+            @include media('<desktop-sm') {
+              display: none !important;
+            }
+          }
+
+          .Card__content {
+            width: 67%;
+            padding: 0 0 0 10px;
+
+            @include media('<desktop-sm') {
+              width: 100%;
+              padding: 0 15px 0 0px;
+            }
+
+            .Card__caption {
+              font-weight: bold;
+              font-size: 20px;
+              line-height: 24px;
+              letter-spacing: 0.002em;
+            }
+
+            .Card__content {
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &--aboutnewrooms {
+    background: #F8F9F9;
+    padding: 96px 0 72px;
+
+    .row {
+      display: block;
+    }
+
+    .NewsRooms__title {
+      text-align: center;
+    }
+
+    .CardList {
+      padding: 0;
+
+      .CardList__item {
+        float: left;
+
+        .Card__bgimage {
+          padding: 194px 22px 0px;
+
+          .Card__content {
+            padding: 24px;
+            min-height: 158px;
+            text-align: left;
+
+            .Card__title {
+              text-align: left;
+            }
+
+            .Card__caption {
+              text-align: left;
+            }
+
+            .Card__content {
+              padding: 0px;
+              min-height: auto;
+            }
+          }
+        }
+      }
+    }
+
+    .NewsRooms__button {
+      text-align: center;
+      padding: 25px;
+    }
+  }
+
+  .btn.btn-base.Btn.Btn--right-arrow {
+    //&:hover {
+    //  .Btn__contents {
+    //    border-bottom: 2px solid $blue80;
+    //  }
+    //}
+  }
+}

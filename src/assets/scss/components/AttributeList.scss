@@ -1,0 +1,74 @@
+.AttributeList {
+  @extend .mobile-side-pad;
+  padding: $module-offset 0;
+  &__list {
+    padding: 0;
+    min-width: 100%;
+    list-style: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__item {
+    display: inline;
+    // margin-bottom: 50px;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .Attribute {
+    &__title {
+      margin-bottom: 1.5em;
+      text-transform: uppercase;
+    }
+
+    &__contents {
+      display: flex;
+      min-width: 100%;
+      background: #fafafa;
+
+      @include media("<=desktop") {
+        height: 300px;
+      }
+
+      @include media("<tablet") {
+        flex-direction: column;
+        height: auto;
+      }
+    }
+
+    &__content {
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @include media("<=desktop") {
+        padding: 20px;
+      }
+
+      @include media("<tablet") {
+        flex-direction: column;
+        padding: 30px 10px;
+      }
+    }
+
+    &__image {
+      img {
+        height: auto;
+
+        @include media("<tablet") {
+          width: 100%;
+        }
+      }
+    }
+
+    &__divider {
+      display: flex;
+      justify-content: center;
+      margin: 25px 0;
+    }
+  }
+}

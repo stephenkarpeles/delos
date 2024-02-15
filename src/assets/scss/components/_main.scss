@@ -1,0 +1,250 @@
+@font-face {
+  font-family: "Brown";
+  src:
+    url("/fonts/brown/BrownLLWeb-Regular.woff2") format('woff2'),
+    url("/fonts/brown/BrownLLWeb-Regular.woff") format('woff'),
+    url("/fonts/brown/BrownLLTT-Regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Brown";
+  src:
+    url("/fonts/brown/BrownLLWeb-Bold.woff2") format('woff2'),
+    url("/fonts/brown/BrownLLWeb-Bold.woff") format('woff'),
+    url("/fonts/brown/BrownLLTT-Bold.ttf") format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Brown";
+  src:
+    url("/fonts/brown/BrownLLWeb-Italic.woff2") format('woff2'),
+    url("/fonts/brown/BrownLLWeb-Italic.woff") format('woff'),
+    url("/fonts/brown/BrownLLTT-Italic.ttf") format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Brown";
+  src:
+    url("/fonts/brown/BrownLLWeb-BoldItalic.woff2") format('woff2'),
+    url("/fonts/brown/BrownLLWeb-BoldItalic.woff") format('woff'),
+    url("/fonts/brown/BrownLLTT-BoldItalic.ttf") format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Brown LL";
+  src: url("https://a.storyblok.com/f/101818/x/06e8b8f183/brownllweb-light.woff2") format("woff2");
+  //src: url("https://a.storyblok.com/f/101818/x/9a70d4f507/brownllweb-regular.woff2") format("woff2");
+}
+
+body,
+div, p, a, input,
+h1, h2, h3, h4, h5, h6,
+ul, li {
+  font-family: 'Brown', sans-serif;
+}
+
+p,
+ul,
+ol,
+li {
+  color: $black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+  font-style: normal;
+  font-weight: bold;
+}
+h1 {
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: -0.3px;
+  white-space: pre-wrap;
+
+  @include media('<=tablet') {
+    font-size: 38px;
+    line-height: 42px;
+    letter-spacing: -1.5px;
+  }
+}
+h2 {
+  font-size: 38px;
+  line-height: 44px;
+  letter-spacing: -0.2px;
+  white-space: pre-wrap;
+
+  @include media('<desktop') {
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: -0.2px;
+  }
+}
+h3 {
+  font-size: 30px;
+  line-height: 42px;
+
+  @include media('<desktop') {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}
+h4 {
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.002em;
+  color: $black;
+
+  @include media('<desktop') {
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0.002em;
+  }
+}
+h5,
+h6 {
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.002em;
+  color: $black;
+}
+
+@mixin delos-hero-heading {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 56px;
+  line-height: 60px;
+
+  @include media('<=tablet') {
+    font-size: 44px;
+    line-height: 46px;
+    letter-spacing: -1.5px;
+  }
+}
+
+.mobile-visible {
+  @include media('<tablet') {
+    display: block !important;
+  }
+  @include media('>=tablet') {
+    display: none !important;
+  }
+}
+.mobile-hidden {
+  @include media('<tablet') {
+    display: none !important;
+  }
+}
+
+.slick-track,
+.slick-slide {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:focus {
+    outline: none !important;
+  }
+
+  & * {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:focus {
+      outline: none !important;
+    }
+  }
+}
+
+@import "./_loader.scss";
+
+@import "./ASpot.scss";
+@import "./AnchorList.scss";
+@import "./AttributeList.scss";
+@import "./AudioList.scss";
+@import "./Author.scss";
+@import "./Blog.scss";
+@import "./Button.scss";
+@import "./Card.scss";
+@import "./CardList.scss";
+@import "./Checklist.scss";
+@import "./Cta.scss";
+@import "./Dropdown.scss";
+@import "./FaqList.scss";
+@import "./FeatureList.scss";
+@import "./Footer.scss";
+@import "./FormEmbed.scss";
+@import "./GuestProfileList.scss";
+@import "./IconTextList.scss";
+@import "./IFrame.scss";
+@import "./LinkList.scss";
+@import "./Lightbox.scss";
+@import "./LogoList.scss";
+@import "./Metrics.scss";
+@import "./Navigation/main.scss";
+@import "./Page.scss";
+@import "./Process.scss";
+@import "./Quote.scss";
+@import "./QuoteList.scss";
+@import "./Refine.scss";
+@import "./RichText.scss";
+//@import "./ResourceHub.scss";
+@import "./Slider.scss";
+@import "./Stats.scss";
+@import "./Tabs.scss";
+@import "./Table.scss";
+@import "./TagList.scss";
+@import "./Testimonials.scss";
+@import "./Timeline.scss";
+@import "./TitleBlock.scss";
+@import "./Topbar.scss";
+@import "./VerticalSteps.scss";
+@import "./VideoEmbed.scss";
+@import "./WhitePaper.scss";
+@import "./HeroText";
+@import "./HeroImage";
+@import "./TimelineItem";
+@import "./FeatureQuote";
+@import "./AccordionList";
+@import "./RichTextImageShadow";
+@import "./RichTextImage";
+@import "./NewsRooms";
+@import "./FancyTitle";
+@import "./Icon";
+@import "./IconList";
+@import "./ImageCardItem";
+@import "./ImageCardRow";
+@import "./HealthSolutionSlider";
+@import "./PlainImage";
+@import "./ColumnText";
+@import "./CtaImage";
+@import "./StatisticsList";
+@import "./ProductList";
+@import "./AudioCard.scss";
+@import "./AudioTextSlider.scss";
+@import "./WideQuote";
+@import "./CtaWhitepaper";
+@import "./NewsTicker";
+@import "./ResourcesList";
+@import "./TagFilters";
+@import "./HeroImageSide";
+@import "./FeatureSlider";
+@import "./VerticalSlider";
+@import "./ImageSlider";
+@import "./FeatureQuoteSlider";
+@import "./Row";
+@import "./ResourcesHubEmbed";
+@import "./Resources";
+@import "./NewsFeedLanding";
+@import "./PressRelease"

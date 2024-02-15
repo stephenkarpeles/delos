@@ -1,0 +1,621 @@
+.Footer {
+  position: relative;
+  z-index: 1;
+  color: $grey-dark;
+  background-color: $white;
+
+
+  &__footer-top {
+    padding: 64px 0;
+
+    @include media('<tablet') {
+      padding-bottom: 0;
+    }
+  }
+
+  &__footer-bottom {
+    padding: 18px 0 14px 0;
+    background-color: $blue;
+
+    #footer-bottom-col-first {
+      order: 1;
+
+      @include media('<tablet') {
+        order: 2;
+        width: 100%;
+        margin: 0;
+        padding-top: 12px;
+        padding-right: 10px;
+        padding-left: 10px;
+
+        .RichText {
+          .RichText__body p {
+            text-align: center !important;
+          }
+
+          .container,
+          .row,
+          .col-md-12 {
+            padding: 0 !important;
+            margin: 0 !important;
+          }
+        }
+      }
+    }
+
+    #footer-bottom-col-second {
+      order: 2;
+
+      @include media('<tablet') {
+        order: 1;
+        width: 95vw;
+        margin: 0 auto;
+        padding-bottom: 12px;
+        border-bottom: 0.75px solid rgba(255, 255, 255, 0.2);
+
+        .Footer__terms {
+          text-align: left !important;
+
+          a {
+            margin-right: 0;
+            display: inline-block;
+            width: 33%;
+            text-align: left;
+
+            &:nth-child(2) {
+              text-align: center;
+            }
+            &:nth-child(3) {
+              text-align: right;
+            }
+          }
+        }
+      }
+
+      @include media('<phone') {
+        padding: 0 0 12px;
+      }
+    }
+
+    .disclaimer {
+
+      .RichText__body {
+        margin-bottom: 0;
+
+        p {
+          margin-bottom: 0;
+          color: $white;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 14px;
+
+          @include media('<tablet') {
+            padding-bottom: 10px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  &__terms {
+    @include flex(row, flex-end, center);
+
+    @include media('<tablet') {
+      display: block !important;
+      text-align: center;
+    }
+
+    .Btn {
+      padding: 0;
+      margin-right: 48px;
+      text-decoration: none;
+      color: $white;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 14px;
+
+      @include media('<desktop-sm') {
+        margin-right: 20px;
+      }
+
+      &:last-child {
+        margin-right: 0 !important;
+      }
+
+      &:hover {
+        color: white;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__logo-link {
+    display: block;
+    width: 100%;
+  }
+
+  &__caption {
+    @extend .mobile-side-pad;
+
+    .RichText {
+
+      & > .container {
+        padding: 0 !important;
+        margin: 0 !important;
+
+        @include media('<=tablet', '>=tablet') {
+          .col-md-12 {
+            padding-left: 0 !important;
+          }
+        }
+      }
+
+      p {
+        color: #8d8d8d;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+  }
+
+
+  &__lead {
+
+    //background: $grey-light;
+    padding: 2% 2%;
+
+
+    #mc_embed_signup-lead {
+        clear:left;
+        width:100%;
+
+        input.email {
+          height: 38px;
+          background: $white;
+          font: inherit;
+          border-radius: 3px;
+          color: $blue70;
+          padding: 0px 0.4em;
+          display: inline-block;
+          margin: 0;
+          vertical-align: top;
+          width: 300px;
+          border: 2px solid $blue70;
+
+          @include media(">=tablet") {
+            min-width: 500px;
+          }
+
+          input.email:hover {
+            border: 2px solid $blue70;
+          }
+
+           input.email:before {
+            color: $blue70;
+          }
+        }
+        form {
+          text-align: center;
+          padding: 10px 0 10px 0;
+        }
+        .clear {
+          display: inline-block;
+        }
+    }
+
+    #mc-embedded-subscribe-lead {
+      display: inline;
+      background: $blue70;
+      border-color: $blue70;
+      color: $white;
+    }
+  }
+
+  &__stats {
+    padding: 40px 0 20px;
+    //background: $grey-dark; // @TODO; <== delete this
+
+
+    @include media(">=tablet") {
+      padding: $module-offset / 2 0;
+    }
+
+    .row {
+      @include media(">=desktop") {
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    margin-top: $module-offset / 2;
+
+    @include media("<tablet") {
+      flex-direction: column;
+    }
+  }
+
+  &__slim {
+    margin-top: $module-offset / 4;
+    margin-bottom: $module-offset / 4;
+
+    @include media(">=desktop") {
+      @include flex(row, space-between, center);
+    }
+  }
+
+  &__social-container {
+
+    @include media("<=desktop-sm", ">=tablet"){
+      display: flex;
+      width: 100%;
+    }
+    @include media("<desktop") {
+      margin-bottom: 3em;
+    }
+    @include media("<tablet") {
+      position: relative;
+    }
+    .Footer__logo-link{
+      @include media("<tablet") {
+        width: 50%;
+        float: left;
+        padding-right: 20px;
+      }
+    }
+    .footer-add.Footer__caption{
+      @include media("<tablet") {
+        width: 50%;
+        float: right;
+      }
+    }
+    .Footer__social-links{
+      @include media("<tablet") {
+        position: absolute;
+        bottom:25px;
+      }
+    }
+  }
+
+  &__social-links {
+    display: block;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      transition: .3s ease all;
+
+      &:last-child {
+        a {
+          margin-right: 0 !important;
+        }
+      }
+
+      &:hover {
+        svg,
+        path {
+          transition: .3s ease all;
+          fill: $blue80;
+        }
+      }
+    }
+
+    @include media('<tablet') {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__social-link {
+    //&:hover {
+    //  opacity: 0.5;
+    //}
+  }
+
+  &__logo-link {
+    //margin-bottom: 52px;
+    //margin: $module-offset 0;
+    //
+    //@include media(">=desktop") {
+    //  @include make-col(3);
+    //  margin: 7px 0 0;
+    //}
+  }
+
+  &__logo {
+    width: 200px;
+    margin-bottom: 20px;
+    max-width: 100%;
+
+    @include media(">=desktop") {
+      width: 11vw;
+    }
+    @include media('<tablet') {
+      width: 121px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__social-link {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+
+    @include media("<tablet") {
+      margin-right: 6px;
+    }
+
+    svg {
+      transform: scale(0.75);
+      transform-origin: top left;
+    }
+
+    &:hover {
+      svg {
+        fill: $black;
+      }
+    }
+  }
+
+  &__link-lists {
+    display: flex;
+    flex: 1;
+
+    @include media('<=tablet', '>tablet') {
+      padding-left: 15px;
+    }
+
+    //@include media('<=desktop-sm') {
+    //  display: none;
+    //}
+
+    .TitleBlock {
+      display: none;
+    }
+
+    @include media("<desktop") {
+      // flex-direction: column;
+      //margin-bottom: 3em;
+    }
+
+    @include media('<desktop-sm') {
+      //padding-left: 15px;
+    }
+
+    @include media('<tablet') {
+      padding-left: 0;
+      margin-bottom: 36px;
+      margin-top: 52px;
+    }
+
+    @include media(">=desktop") {
+      @include make-col-offset(1);
+    }
+
+    & > div {
+      flex: 1;
+    }
+  }
+
+  &__link-list {
+    list-style: none;
+
+    &.split {
+      @include media(">=tablet") {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      & > li {
+        @include media(">=tablet") {
+          width: 50%;
+          flex-basis: 50%;
+        }
+      }
+    }
+
+    .Btn {
+      padding: 0;
+      display: inline-block;
+      color: #8d8d8d;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 24px;
+      text-align: left;
+
+      &:hover {
+        color: $grey-dark;
+      }
+    }
+  }
+
+  &__copy {
+    @include media(">=tablet") {
+      @include flex(row, space-between, center);
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+
+
+  ul, li, h6, a, h5, p {
+    color: $white;
+  }
+
+  ul {
+    padding-left: 0;
+
+    @include media("<=desktop-sm", ">=tablet"){
+      margin:0 0 0 auto;
+    }
+  }
+
+  .TitleBlock:not(:empty) {
+    @include media(">=desktop") {
+      padding: 0;
+      padding-bottom: 1rem;
+    }
+
+    .Btn {
+      padding: 0;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 1;
+        color: white;
+      }
+    }
+  }
+
+  h6 {
+    margin-bottom: 8px;
+    color: $black;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+    /* identical to box height, or 157% */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  p {
+    line-height: 1.125rem;
+
+    padding-left: 0;
+    @include media("<=desktop-sm"){
+    }
+  }
+
+  & > .container > .row {
+    //flex-direction: column;
+    //text-align: center;
+
+    & > *:first-child {
+      @include media("<desktop") {
+        //padding-left: 0;
+      }
+    }
+
+    & > .split {
+      @include media(">=tablet") {
+        max-width: 240px;
+      }
+    }
+
+    @include media(">=tablet") {
+      flex-direction: row;
+      text-align: left;
+      & > * {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+.FooterStat {
+  @include flex(row);
+
+  margin-bottom: 20px;
+
+  @include media(">=desktop") {
+    @include make-col(3);
+    flex: 0 0 22%;
+
+    &:not(:first-child) {
+      @include make-col-offset(1, 24);
+    }
+
+    &:last-child {
+      @include make-col(4);
+    }
+  }
+
+  &__icon {
+    height: 50px;
+
+    max-width: 50px;
+
+    .simple-svg-wrapper {
+      transform: scale(0.5);
+      transform-origin: top left;
+
+      @include media(">=desktop") {
+        transform: scale(0.667);
+      }
+    }
+
+    img {
+      width: 40px;
+      height: auto;
+
+      @include media(">=desktop") {
+        width: auto;
+        max-height: 50px;
+      }
+    }
+  }
+
+  &__contents {
+    @include flex(column);
+
+    p, small {
+      padding: 0 15px;
+    }
+
+    small {
+      font-size: 12px;
+      font-weight: $weight-light;
+      opacity: 0.5;
+      line-height: 1.2;
+
+      & + small {
+        &:before {
+          content: '+';
+          position: absolute;
+          margin-left: -10px;
+        }
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+      font-size: 12px;
+      opacity: 1;
+      font-weight: $weight-black;
+    }
+
+    b {
+      font-weight: $weight-bold;
+      width: 32px;
+    }
+  }
+
+  &--math {
+    @include media(">=desktop") {
+      flex: 0 0 25%;
+    }
+
+    .FooterStat__icon {
+      margin-right: 20px;
+    }
+    p {
+      margin-top: 3px;
+      padding-top: 3px;
+      border-top: 1px solid rgba($white, 0.5);
+    }
+  }
+
+
+}

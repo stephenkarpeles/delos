@@ -1,0 +1,178 @@
+.ResourcesList {
+
+  @keyframes loading {
+    0% {
+      border: 0 solid $white;
+    }
+    20% {
+      border: 8px solid $white;
+      width: 0;
+      height: 0;
+    }
+    100% {
+      border: 8px solid $white;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .paginator {
+    margin-top: 36px;
+    text-align: center;
+  }
+
+  #loader {
+    height: 50vh;
+
+    #spinner {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      background-color: $blue;
+      border-radius: 50%;
+
+      &:after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        border: 0 solid $white;
+        transform: translate(-50%, -50%);
+        animation: loading 1000ms ease-out forwards infinite;
+      }
+    }
+  }
+
+  .resources-list-wrapper-row {
+
+    @include media('<=tablet', '>phone') {
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+    }
+
+    #empty-results {
+      display: block;
+      width: 100%;
+      padding: 0 15px;
+      text-align: center;
+
+      h4 {
+        margin-bottom: 24px;
+        color: $blue80;
+      }
+
+      p {
+        margin-bottom: 36px;
+      }
+    }
+  }
+}
+
+.ResourceTeaser {
+  height: calc(100% - 30px);
+  margin-bottom: 30px;
+  cursor: pointer;
+  position: relative;
+
+  .resource-image {
+    display: block;
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-color: #F4F4F4;
+
+    &.image-size-image-big {
+      height: 300px;
+    }
+  }
+
+  .card-data {
+    padding: 20px 14px 56px 14px;
+    margin-bottom: 30px;
+
+    .page--leadership & {
+      padding: 20px 20px 24px 20px;
+    }
+
+    .resource-date-type {
+      margin-bottom: 8px;
+      color: $black;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 125%;
+      opacity: 0.8;
+      /* identical to box height, or 20px */
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      .page--leadership & {
+        display: none;
+      }
+    }
+
+    .resource-title {
+      display: block;
+      color: $black;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 24px;
+      /* or 120% */
+      letter-spacing: 0.002em;
+    }
+
+    ul.resource-tags {
+      padding: 0;
+      //margin: 12px 0;
+      list-style-type: none;
+      position: absolute;
+      left: 15px;
+      bottom: 0;
+
+      li {
+        display: inline-block;
+        padding: 2px 8px;
+        margin-right: 5px;
+        border-radius: 4px;
+        background-color:lightgrey;
+        color: $black;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 150%;
+        /* or 18px */
+        letter-spacing: 0.002em;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .resource-caption {
+      margin-top: 8px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 150%;
+      /* identical to box height, or 24px */
+      letter-spacing: 0.002em;
+
+      .page--leadership & {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: #F4F4F4;
+    .card-data {
+      background-color: #F4F4F4;
+    }
+  }
+}

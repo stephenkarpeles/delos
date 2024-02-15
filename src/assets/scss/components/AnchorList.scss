@@ -1,0 +1,50 @@
+.AnchorList {
+  margin: 2vw 0;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    justify-content: center;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    @include media(">=tablet") {
+      @include make-col(3);
+      padding: 0 15px;
+    }
+
+    @include media("<tablet") {
+      @include make-col(6);
+      padding: 15px 15px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background: #fafafa;
+  }
+
+  &__title {
+    display: flex;
+    flex: 1;
+    max-height: 50px;
+    align-items: center;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__icon {
+    margin: 10px 0;
+  }
+}

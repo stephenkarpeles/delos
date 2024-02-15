@@ -1,0 +1,52 @@
+.Quote {
+
+  &--border-top {
+    .quote-wrapper {
+      padding-top: 24px;
+      border-top: solid 2px $black;
+    }
+
+    .quote-body {
+      margin-bottom: 24px;
+      color: $black;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 30px;
+      letter-spacing: 0.002em;
+      white-space: pre-wrap;
+    }
+  }
+
+  &--border-left {
+    .quote-wrapper {
+      padding-left: 30px;
+      border-left: solid 2px $black;
+    }
+
+    .quote-body {
+      margin-bottom: 24px;
+      color: $grey-dark;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 42px;
+    }
+  }
+
+  &__quoter {
+    color: $grey-dark;
+    //color: $blue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 125%;
+    /* or 20px */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  &__logo {
+    margin-top: 14px;
+  }
+}

@@ -1,0 +1,119 @@
+.Lightbox {
+  @extend .module-offset;
+  @extend .mobile-side-pad;
+
+  &__modal {
+    .modal-dialog {
+      margin: 5rem auto;
+    }
+
+    .modal-md {
+      @include media(">tablet") {
+        max-width: 50vw;
+      }
+      @include media("<=tablet") {
+        max-width: 80%;
+      }
+    }
+
+    .EmbeddedVideo {
+      iframe {
+        width: 100%;
+        @include media(">desktop") {
+          height: 450px;
+        }
+        @include media("<=desktop") {
+          height: 300px;
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    width: 100%;
+    padding: 0 15px;
+      @include media("<=phone") {
+        @include make-col(12);
+      }
+      @include media(">phone") {
+        @include make-col(6);
+      }
+      @include media(">tablet") {
+        @include make-col(4);
+      }
+  }
+
+  &__contents {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    background: $grey-ghost;
+  }
+
+  &__title {
+    flex: 1;
+    text-transform: uppercase;
+    padding: 20px 0;
+  }
+
+  &__caption {
+    padding-bottom: 10px;
+  }
+
+  &__image {
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    color: $white;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &--single {
+    .Lightbox__content {
+      background: $white;
+    }
+  }
+}
+.EmbeddedVideo {
+  iframe {
+    width: 100%;
+  }
+}

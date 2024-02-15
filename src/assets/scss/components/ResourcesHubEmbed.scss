@@ -1,0 +1,148 @@
+.ResourcesHubEmbed {
+
+  .h1 {
+    padding-bottom: 30px;
+    padding-left: 12px;
+    color: $blue;
+  }
+
+  .tag-filters-row {
+    min-height: 110vh;
+
+    .tag-filters-column {
+      padding-top: 24px;
+      background-color: $white;
+
+      @include media('<=tablet') {
+        border-top: none !important;
+      }
+
+      @include media('<=tablet', '>phone') {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+      }
+    }
+  }
+
+
+  .resources-hub-embed-spacer {
+
+    @include media('<desktop') {
+      padding-top: 36px !important;
+    }
+  }
+
+  .resources-list-wrapper {
+
+    @include media('<desktop-sm') {
+      margin-top: 42px;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+
+  .top-filters {
+    margin-bottom: 42px;
+    padding: 10px 11px 0 0;
+    background-color: $white;
+
+    &.d-block {
+      margin-bottom: 0 !important;
+    }
+
+    &.no-left-border-filters {
+      border-left: none;
+      margin-left: 0;
+    }
+
+    & > .col {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+    }
+
+    span {
+      display: block;
+
+      &.filters-label {
+        margin-right: 10px;
+        color: #747474;
+        font-size: 13px;
+        line-height: 15px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+    }
+
+    .filters-switch {
+      position: relative;
+      display: block;
+      height: 18px;
+      margin-right: 50px;
+
+      @include media('<tablet') {
+        margin-right: 25px;
+      }
+
+      .switch-input:checked + .switch-label::before {
+        background-color: #9FB0CB;
+      }
+      .switch-input:checked + .switch-label::after {
+        left: 32px;
+      }
+
+      .switch-input {
+        display: none;
+      }
+
+      .switch-label {
+        display: block;
+        width: 48px;
+        height: 10px;
+        text-indent: -150%;
+        clip: rect(0 0 0 0);
+        color: transparent;
+        user-select: none;
+
+        &:before,
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          cursor: pointer;
+        }
+
+        &:before {
+          width: 100%;
+          height: 100%;
+          background-color: #dedede;
+          border-radius: 9999em;
+          -webkit-transition: background-color 0.25s ease;
+          transition: background-color 0.25s ease;
+        }
+
+        &:after {
+          top: 3px;
+          left: 4px;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background-color: $blue;
+          box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+          -webkit-transition: left 0.25s ease;
+          transition: left 0.25s ease;
+        }
+      }
+    }
+
+    .filters-select {
+      width: auto;
+      height: 30px;
+      font-size: 12px;
+      transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+  }
+}

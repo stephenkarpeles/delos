@@ -1,0 +1,20 @@
+.Topbar {
+  background: $grey-dark;
+  z-index: 1;
+  position: relative;
+  color: $white;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: $grey-dark;
+    padding: 10px;
+    font-size: 12px;
+    z-index: 2;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+}

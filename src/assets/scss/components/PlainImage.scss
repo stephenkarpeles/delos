@@ -1,0 +1,108 @@
+.PlainImage {
+  width: 100%;
+  overflow: hidden;
+
+  &--width-full {
+
+    .plain-image-container {
+      width: 100%;
+
+      .plain-image-row {
+        width: 100%;
+
+        .plain-image-col {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &--width-boxed {
+
+    .plain-image-container {
+      //width: 100%;
+
+      .plain-image-row {
+        //width: 100%;
+
+        .plain-image-col {
+          //width: 100%;
+        }
+      }
+    }
+  }
+
+  &--indented-right {
+
+    .plain-image-container {
+
+      .plain-image-row {
+        width: 100vw;
+
+        .plain-image-col {
+          width: calc(100vw - ((100vw - 1140px + 30px) / 2));
+          //height: calc(90vw * .449);
+
+          @include media('<desktop-midd') {
+            width: calc(100vw - ((100vw - 960px + 30px) / 2));
+          }
+
+          @include media('<tablet') {
+            width: 100vw;
+            height: calc(100vw * .5);
+          }
+        }
+      }
+    }
+  }
+
+  &--indented-left {
+
+    .plain-image-container {
+
+      .plain-image-row {
+        width: 100vw;
+
+        .plain-image-col {
+          float: right;
+          width: calc(100vw - ((100vw - 1140px + 30px) / 2));
+          //min-height: calc(90vw * .449);
+          //height: calc(90vw * .449);
+
+          @include media('<desktop-midd') {
+            width: calc(100vw - ((100vw - 960px + 30px) / 2));
+          }
+
+          @include media('<tablet') {
+            width: 100vw;
+            height: calc(100vw * .5);
+          }
+        }
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    background-size: cover;
+
+    @include media('<tablet') {
+      min-height: unset;
+      background-size: cover;
+    }
+  }
+
+}
+
+.page--homepage {
+  .PlainImage--indented-left .plain-image-container .plain-image-row .plain-image-col {
+    @include media('<tablet') {
+      height: calc(100vw * .75);
+    }
+  }
+}

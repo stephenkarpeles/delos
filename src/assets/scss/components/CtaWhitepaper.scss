@@ -1,0 +1,111 @@
+.CtaWhitepaper {
+
+  &__wrapper {
+    position: relative;
+    padding: 74px 98px;
+    margin-bottom: 24px;
+    background-color: $blue10;
+
+    @include media('<desktop-sm') {
+      padding: 48px;
+
+      &.has-mobile-image {
+        margin-top: 72px;
+      }
+    }
+    @include media('<tablet') {
+      padding: 24px;
+
+      &.has-mobile-image {
+        margin-top: 48px;
+      }
+    }
+    //background: linear-gradient(to bottom, $white 20%, $blue10 20%, $blue10 80%, $white 80%, $white 100%);
+    //background: linear-gradient(to bottom, $white 10vw, $blue10 10vw, $blue10 80vw, $white 80vw, $white 100%);
+  }
+
+  &__image-wrapper {
+    height: 0;
+    overflow: visible;
+
+    .image-inner img {
+      margin-top: -115px;
+      margin-left: -55px;
+      max-height: 480px;
+
+      @include media('<desktop-mid') {
+        margin-top: -90px;
+      }
+    }
+  }
+
+  &__mobile-image-wrapper {
+    .image-inner {
+      display: block;
+      width: 180px;
+      height: 250px;
+      margin-bottom: 16px;
+      margin-top: -110px;
+      filter: drop-shadow(5px 7px 14px rgba(0, 0, 0, 0.2));
+
+      img {
+        display: block;
+        width: 180px;
+        height: 250px;
+      }
+    }
+
+    @include media('<tablet') {
+      .image-inner {
+        display: block;
+        width: 150px;
+        height: 211px;
+        margin-bottom: 16px;
+        margin-top: -72px;
+        filter: drop-shadow(5px 7px 14px rgba(0, 0, 0, 0.2));
+
+        img {
+          display: block;
+          width: 150px;
+          height: 211px;
+        }
+      }
+    }
+  }
+
+  &__title {
+    color: $white;
+    white-space: pre-wrap;
+  }
+
+  &__body {
+    font-family: 'Brown LL' !important;
+    margin-top: 24px;
+    color: $white;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 150%;
+    /* or 30px */
+    letter-spacing: 0.002em;
+    white-space: pre-wrap;
+  }
+
+  &__links {
+    margin-top: 24px;
+
+    a.Btn {
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include media('<tablet') {
+        display: inline-block;
+        margin-right: 0;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

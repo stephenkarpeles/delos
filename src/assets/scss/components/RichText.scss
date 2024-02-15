@@ -1,0 +1,61 @@
+.RichText {
+
+  text-align: center;
+
+  &__subtitle {
+    margin-bottom: 24px;
+    color: $black;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 125%;
+    /* identical to box height, or 25px */
+    text-align: center;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin-bottom: 36px;
+    color: $black;
+    text-align: center;
+  }
+
+  &__body {
+    margin-bottom: 24px;
+    color: $black;
+    font-size: 16px;
+    line-height: 150%;
+    /* or 24px */
+    text-align: left;
+    letter-spacing: 0.002em;
+    white-space: pre-wrap;
+    a {
+      color: #1B51A3;
+      text-decoration: underline;
+    }
+
+    p {
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__links {
+
+    a.Btn {
+      margin: 0 10px;
+    }
+  }
+}
+
+.smallText {
+  .RichText__body{
+    p {
+      font-size: 13px;
+    }
+  }
+
+}

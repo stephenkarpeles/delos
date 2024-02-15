@@ -1,0 +1,147 @@
+.AudioTextSlider {
+
+  &__container {
+    @include media('<tablet') {
+      width: 100vw;
+      max-width: unset;
+    }
+  }
+
+  &__row {
+    @include media('>=tablet') {
+      width: calc(100vw - ((100vw - 1140px + 30px) / 4));
+      max-width: 1440px;
+    }
+    @include media('<tablet') {
+      width: 100vw;
+    }
+  }
+
+  .slick-slide.slick-active.slick-center.slick-current {
+    width: 360px !important;
+    margin-right: 30px;
+  }
+  .slick-slider{
+    @include media('<tablet') {
+      padding-top: 48px;
+
+      .AudioCard,
+      .AudioCard__container {
+        width: 100vw !important;
+      }
+    }
+  }
+
+  &__left-col {
+    display: flex;
+    align-items: center;
+
+    @include media('<tablet') {
+      order: 2;
+    }
+  }
+
+  &__right-col {
+
+    @include media('<tablet') {
+      order: 1;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__content {
+    display: block;
+    //padding: 10px 15px 10px 150px;
+    @include media('<=tablet') {
+      padding: 10px 20px 10px 20px;
+    }
+    .AudioTextSlider__bm-button {
+      @include media('<tablet') {
+        display: flex !important;
+      }
+
+      span.slide-number {
+        margin-right: 33px;
+        width: 26px;
+
+        @include media('<tablet') {
+          width: 80%;
+        }
+      }
+
+      span.prev,
+      span.next {
+        cursor: pointer;
+        transform: rotate(180deg);
+        margin-right: 18px;
+
+        @include media('<tablet') {
+          margin-top: 2px;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  &__more-button {
+    @include media('<tablet') {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__bm-button-desktop {
+    padding: 0 15px;
+    display: block;
+    width: 50%;
+    text-align: right;
+
+    @include media('<desktop-midd') {
+      width: 75%;
+    }
+
+    span.slide-number {
+      display: inline;
+      margin-right: 30px;
+    }
+
+    span.prev,
+    span.next {
+      display: inline-block;
+      margin-top: 8px;
+      cursor: pointer;
+      transform: rotate(180deg);
+      margin-right: 12px;
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include media('<tablet') {
+        margin-top: 2px;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &__title h2 {
+    margin-bottom: 24px;
+    color: $black;
+
+    @include media('<tablet') {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__body {
+    margin-top: 24px;
+    color: $black;
+
+    @include media('<tablet') {
+      margin-top: 12px;
+    }
+
+    p:last-child {
+      margin-bottom: 32px;
+    }
+  }
+}

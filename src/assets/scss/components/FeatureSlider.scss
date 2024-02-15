@@ -1,0 +1,142 @@
+.FeatureSlider {
+
+  &__pager {
+    margin-bottom: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    .pager-item {
+      flex: 1 1;
+
+      .pager-item-inner {
+        opacity: 0.4;
+        margin: 0 12px;
+        padding-top: 12px;
+        border-top: solid 2px $black;
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+
+  &__pager-item-index {
+    margin-bottom: 12px;
+    color: $blue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+
+  &__pager-item-title {
+    color: $black;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.002em;
+  }
+
+
+  &__image {
+    display: block;
+    margin-bottom: 36px;
+
+    @include media('<tablet') {
+      margin-bottom: 24px;
+    }
+  }
+
+
+  &__title {
+    margin-bottom: 24px;
+    color: $black;
+
+    @include media('<tablet') {
+      margin-bottom: 16px;
+    }
+  }
+
+
+  &__body {
+    color: $black;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.002em;
+
+    a {
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
+
+
+  &__default-carousel-controls {
+    position: absolute;
+    width: 100%;
+    top: calc(50% - 22px);
+    left: 0;
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+
+    &.active {
+      opacity: 1;
+    }
+
+    span.arrow-icon {
+      position: relative;
+      top: -1.8px;
+      display: inline-block;
+      cursor: pointer;
+
+      &.prev {
+        //margin-left: 12px;
+      }
+      &.next {
+        //margin-right: 12px;
+      }
+    }
+  }
+
+
+  &__carousel-row {
+
+    @include media('<tablet') {
+      width: calc(165vw);
+
+      .col {
+        padding-left: 0;
+
+        .slick-slide {
+          & > div {
+            padding-left: 15px;
+          }
+        }
+      }
+    }
+
+    @include media('<=phone') {
+      width: calc(190vw);
+    }
+  }
+
+}

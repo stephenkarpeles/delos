@@ -1,0 +1,414 @@
+//------------- Type Baseline could go here....
+
+::selection {
+  color: white;
+  background: $blue;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+  @include font-smoothing();
+  font-family: $font-family-sans-serif;
+}
+
+h1, h2, h3 {
+  color: $black;
+}
+
+h4, h5, h6, p, ul, ol {
+  color: $grey-dark;
+}
+
+
+h1 {
+  font-family: $font-family-serif;
+  font-size: 2rem;
+  font-weight: $weight-bold;
+  line-height: 0.9667;
+  letter-spacing: -0.66px;
+
+  @include media(">=tablet") {
+    font-size: 3rem;
+  }
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-family: $font-family-sans-serif;
+  font-size: 1.75rem;
+  // font-weight: $weight-black;
+  line-height: 1.2;
+  letter-spacing: -0.10px;
+
+  @include media(">=desktop") {
+    font-size: 2.2rem;
+  }
+}
+
+h5 {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: $weight-medium;
+}
+
+h6 {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: $weight-blackout;
+  letter-spacing: 1.86px;
+  line-height: 1;
+}
+
+body {
+  font-weight:500;
+  font-size: 1rem;
+  //max-width: 1440px;
+  //margin: 0 auto;
+  //box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+li {
+  color: $grey-dark;
+}
+
+a {
+  color: inherit;
+
+  &:hover {
+    //color: darken($white, 40%);
+    color: $blue80;
+    text-decoration: none;
+  }
+}
+
+
+//------------- Ringo utility classes
+
+$percents: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
+$blends: multiply, color, screen, overlay, darken, lighten, color-dodge, color-burn, hard-light, soft-light, difference, exclusion, hue, saturation, luminosity, normal;
+$listItemIconList: check, globe;
+$zindex: 0, 10, 20, 30, 40, 50;
+$directions-list: top, right, bottom, left;
+
+
+@each $icon in $listItemIconList {
+  .listicon-#{$icon} {
+    $_icon-size: 20px;
+
+    ul {
+      padding-left: $_icon-size;
+    }
+    ul li {
+      position: relative;
+      list-style: none;
+      margin-left: $_icon-size;
+      padding-bottom: $_icon-size / 2;
+
+      &:before {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        top: 4px;
+        left: -$_icon-size / 2;
+        width: $_icon-size;
+        height: $_icon-size * 0.75;
+        background-color: $blue;
+        // background-image: url("~/svg/icon/#{$icon}.svg");
+        -webkit-mask:  url("~/svg/icon/#{$icon}.svg") no-repeat 50% 50%;
+        mask: url("~/svg/icon/#{$icon}.svg") no-repeat 50% 50%;
+        background-size: $_icon-size $_icon-size * 0.75;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateX(-100%);
+      }
+    }
+  }
+}
+
+@each $key, $value in $colorMap {
+  .bg-#{$key} {
+    background-color: $value!important;
+  }
+  .bg-mobile-#{$key} {
+    @include media("<tablet") {
+      background-color: $value!important;
+    }
+  }
+  .color-#{$key} {
+    &, h1, h2, h3, h4, h5, h6, p, li, div {
+      color: $value!important;
+    }
+    .icon, .simple-svg-wrapper, svg {
+      fill: $value!important;
+    }
+  }
+
+  .bg-skew-#{$key} {
+    position: relative;
+    background-color: none!important;
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: calc(100% + #{$module-offset * 2});
+      top: -$module-offset / 2;
+      -webkit-transform: skewY(-8deg);
+      transform: skewY(-8deg);
+      background: $value!important;
+    }
+  }
+
+  .bg-curved-before-#{$key} {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 200px;
+      top: -198px;
+      left: 0;
+      z-index: -1;
+      background-color: $value;
+      -webkit-mask:  url('https://a.storyblok.com/f/52232/x/b0cb142e3c/curve.svg') no-repeat 50% 50%;
+      mask: url('https://a.storyblok.com/f/52232/x/b0cb142e3c/curve.svg') no-repeat 50% 50%
+    }
+  }
+
+  .bg-curved-after-#{$key} {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 200px;
+      bottom: -198px;
+      left: 0;
+      z-index: -1;
+      background-color: $value;
+      -webkit-mask:  url('http://a.storyblok.com/f/52232/x/e86a606174/curve-after.svg') no-repeat 50% 50%;
+      mask: url('http://a.storyblok.com/f/52232/x/e86a606174/curve-after.svg') no-repeat 50% 50%
+    }
+  }
+
+  .bg-color-pop-#{$key} {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100vw;
+      height: 100%;
+      top: 0;
+      left: calc((100vw - 100%) / -2);
+      background-color: $value!important;
+    }
+  }
+
+  .listicon-#{$key} ul li:before {
+    background-color: $value;
+  }
+
+  @each $per in $percents {
+
+    .overlay-#{$key}-#{$per} {
+      &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba($value, $per * 0.01);
+      }
+    }
+  }
+}
+
+@each $key, $value in $gradient-bg-colors {
+  .bg-gradient-#{$key} {
+    background: $value !important;
+  }
+}
+
+@each $blend in $blends {
+  .blend-mode-#{$blend} {
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: $blend;
+    }
+  }
+}
+
+@each $key, $value in $weightMap {
+  .weight-#{$key} {
+    font-weight: $value!important;
+  }
+}
+
+@each $key, $value in $layout-spacing {
+  @each $_dir in $directions-list {
+    .padding-#{$_dir}-#{$key} {
+      padding-#{$_dir}: $value;
+
+      @include media('<=tablet') {
+        padding-#{$_dir}: calc(#{$value} * 0.5);
+      }
+    }
+
+    .margin-#{$_dir}-#{$key} {
+      margin-#{$_dir}: $value;
+
+      @include media('<=tablet') {
+        margin-#{$_dir}: calc(#{$value} * 0.5);
+      }
+    }
+  }
+}
+
+@each $key, $value in $item-spacing {
+  @each $_dir in $directions-list {
+    .space-#{$_dir}-#{$key},
+    .space-padding-#{$_dir}-#{$key} {
+      padding-#{$_dir}: $value !important;
+    }
+
+    .space-margin-#{$_dir}-#{$key} {
+      margin-#{$_dir}: $value !important;
+    }
+  }
+}
+
+
+.bg-none {
+  background: none!important;
+}
+
+.hidden {
+  display: none;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+@each $z in $zindex {
+  .z-#{$z} {
+    z-index: $z;
+  }
+}
+
+.z-auto{
+  z-index: auto;
+}
+
+.image-round,
+.image-round img {
+  border-radius: 100%;
+}
+
+.mobile-side-pad {
+  $_mobile-side-pad: 24px;
+  @include media("<=tablet") {
+    padding-left: 15px!important;
+    padding-right: 15px!important;
+  }
+}
+
+.module-offset {
+  padding: $mobile-module-offset*2 0;
+
+  @include media(">=tablet") {
+    padding: $module-offset 0;
+  }
+}
+
+.module-offset-top {
+  padding-top: $mobile-module-offset!important;
+  @include media(">=tablet") {
+    padding-top: $module-offset!important;
+  }
+}
+
+.module-offset-bottom {
+  padding-bottom: $mobile-module-offset!important;
+  @include media(">=tablet") {
+    padding-bottom: $module-offset!important;
+  }
+}
+
+.module-offset-45 {
+  @include media('>=desktop-sm'){
+    margin-left: 40%;
+  }
+  @include media('>=tablet'){
+    margin-left: 35%;
+  }
+
+}
+
+.well-shadow {
+  box-shadow: -10px -10px 30px $white, 10px 10px 30px rgba(174, 174, 192, 0.2);
+}
+
+.error-page {
+  overflow: hidden;
+}
+
+.padding-shadow-combo {
+  @include media(">phone") {
+    padding: none;
+    box-shadow: none;
+
+    > .padding-shadow-combo {
+      padding: 48px 36px;
+      box-shadow: 10px 10px 30px 0px #aeaec00d;
+    }
+  }
+}
+
+// Spacing
+.pad-left-5 {
+  padding-left: 5px;
+}
+
+.pad-left-10 {
+  padding-left: 10px;
+}
+
+.pad-left-15 {
+  padding-left: 15px;
+}
+
+.pad-left-20 {
+  padding-left: 20px;
+}
+
+.pad-right-5 {
+  padding-right: 5px;
+}
+
+.pad-right-10 {
+  padding-right: 10px;
+}
+
+.pad-right-15 {
+  padding-right: 15px;
+}
+
+.pad-right-20 {
+  padding-right: 20px;
+}

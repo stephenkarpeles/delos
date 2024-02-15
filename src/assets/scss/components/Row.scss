@@ -1,0 +1,31 @@
+.RowModule {
+
+  & > .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .row-align-items {
+
+    &--align-top {
+
+    }
+
+    &--align-center {
+      display: flex;
+
+      & > div {
+        align-self: center;
+      }
+    }
+
+    &--align-bottom {
+      display: flex;
+
+      & > div {
+        align-self: flex-end;
+      }
+    }
+  }
+
+}

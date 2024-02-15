@@ -1,0 +1,64 @@
+.GuestProfileList {
+  @extend .mobile-side-pad;
+  @extend .module-offset;
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+  &__item {
+    @include media(">=tablet") {
+      @include make-col(4);
+    }
+    @include media("<phone") {
+      @include make-col(12);
+    }
+    padding: 0 15px;
+    margin-bottom: 75px;
+  }
+}
+
+.GuestProfile {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__details {
+    flex: 1;
+    }
+
+  &__contents {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__description {
+    margin-top: 10px;
+  }
+
+  &__benefit-list {
+    padding: 0;
+    list-style-position: inside;
+  }
+
+  &__image {
+    height: auto;
+    position: relative;
+    max-width: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+

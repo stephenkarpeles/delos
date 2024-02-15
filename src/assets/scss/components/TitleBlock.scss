@@ -1,0 +1,219 @@
+.TitleBlock {
+  @include flex(row, flex-start, center);
+  width: 100%;
+
+  &:not(:empty) {
+    position: relative;
+    padding-bottom: $mobile-module-offset;
+    margin-bottom: 100px;
+
+    @include media(">=tablet") {
+      padding-bottom: $module-offset / 2;
+      margin-bottom: 100px;
+    }
+
+    @include media("<tablet") {
+      margin-bottom: 75px;
+    }
+
+    @include media("<tablet") {
+      // margin-bottom: 20px;
+    }
+  }
+
+  &__contents {
+    width: 100%;
+  }
+
+  &__logo {
+    margin-bottom: 25px;
+    // @include media("<=tablet") {
+    //   width: 50%;
+    // }
+    // @include media("<=phone") {
+    //   width: 90%;
+    // }
+    @include media("<=phone") {
+      width: 100%;
+    }
+  }
+
+  &__subtitle {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: $grey-dark;
+    font-size: 14px;
+    font-weight: $weight-black;
+    letter-spacing: 1.86px;
+    line-height: 1;
+
+    .FancyText {
+      display: inline-block;
+      padding: 8px;
+      line-height: 1;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    &:only-child {
+      margin-bottom: 0;
+    }
+    &:not(:only-child) {
+      margin-bottom: $module-offset / 4;
+    }
+
+    @include media("<tablet") {
+      margin-top: 30px;
+    }
+
+    .FancyText {
+      width: 60%;
+      display: inline-block;
+
+      @include media("<tablet") {
+        width: 100%;
+      }
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      border-bottom: solid 2px $grey-dark;
+      max-width: 50px;
+      margin: 1em auto 0 auto;
+    }
+  }
+
+  &__caption {
+    margin: 0 auto;
+  }
+
+  &--align-center {
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: $module-offset / 2;
+    margin: 0 auto;
+    text-align: center;
+
+    @include media(">=tablet") {
+      text-align: center;
+    }
+
+    .TitleBlock__contents {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      background: $white;
+      min-height: 250px;
+      position: absolute;
+      bottom: -5vw;
+      padding: 2vw;
+      padding-top: 5em;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+
+      img {
+        align-self: center;
+      }
+
+      @include media("<tablet") {
+        height: auto;
+      }
+      @include media(">=phone") {
+        width: 100%;
+        bottom: -15vw;
+      }
+      @include media(">=tablet") {
+        width: 100%;
+        bottom: -6em;
+      }
+      @include media(">=desktop") {
+        width: 80%;
+        bottom: -6em;
+      }
+    }
+
+    .TitleBlock__background {
+      width: 100%;
+      height: 400px;
+      background-position: center;
+
+      @include media("<desktop") {
+        height: 500px;
+      }
+    }
+
+    .container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      @include media("<tablet") {
+        width: 90%;
+      }
+    }
+
+    .TitleBlock__image {
+      margin-right: 0;
+      margin-bottom: $module-offset / 2;
+    }
+
+    .TitleBlock__caption {
+      margin-top: 10px;
+
+      @include media(">=desktop") {
+        max-width: 80%;
+      }
+
+      @include media("<=tablet") {
+        font-size: 18px;
+      }
+    }
+
+    .TitleBLock__link {
+      @include media(">=tablet") {
+        @include flex(row, center);
+      }
+    }
+  }
+
+  &--left-vertical {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.noLogo {
+  @include media("<tablet") {
+    padding-top: 1em !important;
+  }
+}
+
+.noCaption {
+  .TitleBlock__title {
+    @include media(">=phone") {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+// let title & captions get overridden with cls, e.g: 'title-h3'
+//$hSizes: (
+//  'h1': $h1-font-size,
+//  'h2': $h2-font-size,
+//  'h3': $h3-font-size,
+//  'h4': $h3-font-size,
+//  'h5': $h5-font-size
+//);
+//
+//@each $key, $value in $hSizes {
+//  .title-#{$key} .TitleBlock__title,
+//  .caption-#{$key} .TitleBlock__caption {
+//    font-size: $value;
+//  }
+//}

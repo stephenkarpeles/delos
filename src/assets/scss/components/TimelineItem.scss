@@ -1,0 +1,56 @@
+.TimelineItem {
+
+  &--border-left {
+    .row-first {
+      min-height: 120px;
+      padding-left: 15px;
+      border-left: solid 3px $black;
+    }
+  }
+
+  &--no-border {
+    text-align: center;
+  }
+
+  .row-first,
+  .row-second {
+    margin-right: 15px;
+    margin-bottom: 20px;
+  }
+
+  &__image {
+    margin-bottom: 8px;
+
+    img {
+      display: inline-block;
+    }
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    color: $black;
+  }
+
+  &__subtitle {
+    margin-bottom: 8px;
+    color: $black;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 125%;
+    /* identical to box height, or 20px */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  &__body {
+    margin-top: 20px;
+    color: $black;
+    font-size: 16px;
+    line-height: 150%;
+    /* or 24px */
+    letter-spacing: 0.002em;
+    white-space: pre-wrap;
+  }
+
+}

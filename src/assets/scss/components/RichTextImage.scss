@@ -1,0 +1,137 @@
+.RichTextImage {
+
+  &--content-left,
+  &--content-right {
+
+    .column-contents {
+      @include make-col(6);
+    }
+
+    .column-image {
+      @include make-col(6);
+    }
+
+    .rich-text-image-inner {
+      margin: 190px 0;
+    }
+  }
+
+  &--content-left-wide,
+  &--content-right-wide {
+
+    .column-contents {
+      @include make-col(7);
+
+      @include media('<tablet') {
+        @include make-col(12);
+      }
+    }
+
+    .column-image {
+      @include make-col(5);
+
+      @include media('<tablet') {
+        @include make-col(12);
+      }
+    }
+
+    .rich-text-image-inner {
+      margin: 100px 0;
+
+      @include media('<tablet') {
+        margin:50px 15px;
+      }
+    }
+  }
+
+  &--content-left,
+  &--content-left-wide {
+    .column-contents {
+      order: 1;
+    }
+
+    .column-image {
+      order: 2;
+    }
+  }
+
+  &--content-right,
+  &--content-right-wide {
+    .column-contents {
+      order: 2;
+    }
+
+    .column-image {
+      order: 1;
+    }
+  }
+
+  .column-image {
+    width: 100%;
+    //height: 300px;
+  }
+
+  .column-contents {
+    display: flex;
+    align-items: center;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+
+    @include media('<tablet') {
+      height: 500px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 24px;
+    color: $black;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 125%;
+    /* identical to box height, or 25px */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    color: $black;
+  }
+
+  &__body {
+    margin-bottom: 36px;
+    color: $black;
+    font-size: 16px;
+    line-height: 150%;
+    /* or 24px */
+    letter-spacing: 0.002em;
+    white-space: pre-wrap;
+  }
+
+  &__links {
+
+    a.Btn {
+      margin-right: 20px;
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include media('<tablet') {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 12px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
